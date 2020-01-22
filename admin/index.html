@@ -8,10 +8,18 @@
     <title>Document</title>
 </head>
 <body>
+    <div id="app">
+        <input type="text" class="create-inp" v-model="pageName">
+        <button class="create-btn" v-on:click="createPage">Create Page</button>
 
-    <h1>Hi there</h1>
-    <h2>Asshole</h2>
-    <h3>Just joking</h3>
+        <!-- <input type="text" class="del-inp">
+        <button class="del-btn">Delete Page</button> -->
+
+        <div v-for="(page, index) in pagelist">
+           <h1>{{index + 1}}) {{ page }} <a href="#" v-on:click="deletePage(page)">(x)</a> </h1> 
+        </div>
+    </div>
+
     <script src="bundle.js"></script>
 </body>
 </html>
